@@ -34,6 +34,8 @@ Table of contents:
   - [Expose relay fallback switch](#expose-relay-fallback-switch)
   - [Relay Interlocking](#relay-interlocking)
   - [Remove non-essential components](#remove-non-essential-components)
+  - [Restart with 15s button press](#restart-with-15s-button-press)
+  - [Set Temperature to Fahrenheit](#set-temperature-to-fahrenheit)
 
 &nbsp;
 &nbsp;
@@ -750,4 +752,11 @@ binary_sensor:
         invalid_cooldown: ${invalid_cooldown}
         then:  # Restart the panel
           - button.press: restart_nspanel
+```
+
+### Set Temperature To Fahrenheit
+By default, the device's internal thermostat is set to celsius. Adding the following to your YAML configuration's substitutions will set it to fahrenheit
+```yaml
+substitutions:
+  temp_units: "°F"
 ```
